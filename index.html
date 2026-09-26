@@ -1,0 +1,479 @@
+
+Сообщения
+Занято 0 % от 15 ГБ
+Условия использования · Конфиденциальность · Правила программы
+Последние действия в аккаунте: 0 минут назад
+Открыто в другом месте · Подробные сведения
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Мебель в Лахте — премиальная мебель на заказ в Санкт-Петербурге. Кухни, прихожие, санузлы, детские, гостиные, спальни и офисы.">
+  <title>Мебель в Лахте — премиальная мебель на заказ</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, Arial, sans-serif;
+      color: #171717;
+      background: #f7f6f3;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247,246,243,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #dedbd5;
+    }
+    nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 0;
+      border: none;
+    }
+    .brand span { font-size: 17px; }
+    .menu {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+    }
+    .menu a:hover { opacity: .55; }
+
+    .hero {
+      min-height: 680px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 90px 0;
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 22px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: #8b1118;
+      font-weight: 700;
+    }
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: .95;
+      letter-spacing: -.045em;
+      max-width: 950px;
+      margin: 0 auto 30px;
+    }
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #66635e;
+      font-size: 18px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 15px 24px;
+      border: 1px solid #171717;
+      font-size: 14px;
+      transition: .2s;
+    }
+    .btn.dark { background: #171717; color: white; }
+    .btn:hover { transform: translateY(-2px); }
+
+    section { padding: 100px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+    }
+    .section-head p { max-width: 430px; color: #706d67; }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card {
+      min-height: 230px;
+      padding: 28px;
+      background: #fff;
+      border: 1px solid #e2dfd8;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .25s;
+    }
+    .card:hover { transform: translateY(-5px); border-color: #aaa; }
+    .num { color: #8b1118; font-size: 12px; }
+    .card h3 {
+      font-family: Georgia, serif;
+      font-size: 29px;
+      font-weight: 400;
+    }
+    .card p { color: #77736d; font-size: 14px; }
+
+    .about {
+      background: #171717;
+      color: white;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .about p { color: #c6c3bd; font-size: 17px; margin-top: 22px; max-width: 580px; }
+    .facts { display: grid; gap: 12px; }
+    .fact {
+      padding: 22px 0;
+      border-bottom: 1px solid #3d3d3d;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .fact span:last-child { color: #aaa; text-align: right; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .service {
+      padding: 25px 18px;
+      min-height: 150px;
+      background: white;
+      border: 1px solid #e2dfd8;
+    }
+    .service strong { display: block; margin-bottom: 8px; }
+    .service span { color: #77736d; font-size: 13px; }
+
+    .contact {
+      background: #e7e3dc;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .contact-box {
+      background: white;
+      padding: 35px;
+      border: 1px solid #d5d0c7;
+    }
+    .contact-box p { margin: 10px 0; color: #68655f; }
+    .contact-box a { font-weight: 700; }
+    footer {
+      padding: 30px 0;
+      background: #111;
+      color: #aaa;
+      font-size: 13px;
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .menu { display: none; }
+      .catalog { grid-template-columns: 1fr 1fr; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 15px; }
+    }
+    @media (max-width: 520px) {
+      .catalog, .services { grid-template-columns: 1fr; }
+      .hero { min-height: 590px; }
+      footer .container { display: block; }
+      footer p + p { margin-top: 8px; }
+    }
+  
+
+    /* Форма заявки */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}
+    .modal.active{display:flex}
+    .modal-card{width:min(620px,100%);max-height:90vh;overflow:auto;background:#fff;padding:34px;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative}
+    .modal-card h2{margin:0 0 8px;font-size:32px}
+    .modal-card .form-subtitle{color:#666;margin:0 0 24px}
+    .close-modal{position:absolute;right:18px;top:14px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:#555}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form-field{display:flex;flex-direction:column;gap:7px}
+    .form-field.full{grid-column:1/-1}
+    .form-field label{font-size:14px;font-weight:600}
+    .form-field input,.form-field select,.form-field textarea{width:100%;box-sizing:border-box;border:1px solid #d8d8d8;border-radius:10px;padding:12px 13px;font:inherit;background:#fff;outline:none}
+    .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#222}
+    .form-field textarea{min-height:110px;resize:vertical}
+    .form-check{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:#666;margin:18px 0}
+    .form-check input{margin-top:3px}
+    .form-submit{width:100%;border:0;cursor:pointer}
+    .form-note{font-size:12px;color:#888;margin:12px 0 0;text-align:center}
+    @media(max-width:600px){.modal-card{padding:26px 20px}.modal-card h2{font-size:26px}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}}
+
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#top" class="brand">
+        <img src="logo.jpg" alt="Логотип Мебель в Лахте">
+        <span>Мебель в Лахте</span>
+      </a>
+
+      <div class="menu">
+        <a href="#catalog">Коллекции</a>
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Санкт-Петербург · Премиальная мебель</span>
+      <h1>Мебель,<br>созданная для вас.</h1>
+      <p>
+        Проектируем и производим мебель на заказ для современных интерьеров.
+        Индивидуальный дизайн, премиальные материалы и внимание к каждой детали.
+      </p>
+      <div class="buttons">
+        <a class="btn dark" href="#contacts">Обсудить проект</a>
+        <a class="btn" href="#catalog">Смотреть направления</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <h2>Направления</h2>
+        <p>Изготавливаем мебель по индивидуальным размерам и проектам — от одной зоны до полного оснащения интерьера.</p>
+      </div>
+
+      <div class="catalog">
+        <article class="card"><span class="num">01</span><h3>Кухни</h3><p>Функциональные кухни с индивидуальной планировкой.</p></article>
+        <article class="card"><span class="num">02</span><h3>Прихожие</h3><p>Системы хранения, которые органично вписываются в интерьер.</p></article>
+        <article class="card"><span class="num">03</span><h3>Санузлы</h3><p>Мебель для ванной с учетом материалов и особенностей помещения.</p></article>
+        <article class="card"><span class="num">04</span><h3>Детские</h3><p>Продуманные решения для учебы, отдыха и хранения.</p></article>
+        <article class="card"><span class="num">05</span><h3>Гостиные</h3><p>Лаконичные системы хранения и мебель под архитектуру пространства.</p></article>
+        <article class="card"><span class="num">06</span><h3>Спальни</h3><p>Гармоничные комплекты мебели для спокойного интерьера.</p></article>
+        <article class="card"><span class="num">07</span><h3>Офисы</h3><p>Премиальные рабочие пространства для дома и бизнеса.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div>
+        <span class="eyebrow">Индивидуальный подход</span>
+        <h2>Не просто мебель.<br>Часть интерьера.</h2>
+        <p>
+          Мы создаем мебель на заказ, ориентируясь на архитектуру помещения,
+          образ жизни и пожелания клиента. От первой идеи до финальной установки
+          проект сопровождается нашей командой.
+        </p>
+      </div>
+
+      <div class="facts">
+        <div class="fact"><span>Сегмент</span><span>Средний</span></div>
+        <div class="fact"><span>Формат</span><span>Производство на заказ</span></div>
+        <div class="fact"><span>География</span><span>Санкт-Петербург</span></div>
+        <div class="fact"><span>Офис</span><span>Комендантская площадь, 4</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Сервис</h2>
+        <p>Берем на себя весь путь — от замера до обслуживания уже установленной мебели.</p>
+      </div>
+
+      <div class="services">
+        <div class="service"><strong>Замер помещения</strong><span>Точный замер перед проектированием.</span></div>
+        <div class="service"><strong>Доставка</strong><span>Доставка готовой мебели.</span></div>
+        <div class="service"><strong>Сборка</strong><span>Профессиональная установка.</span></div>
+        <div class="service"><strong>Дизайн-консалтинг</strong><span>Помощь с материалами и решениями.</span></div>
+        <div class="service"><strong>Постгарантийное обслуживание</strong><span>Поддержка после завершения проекта.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacts">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">Контакты</span>
+        <h2>Создадим ваш<br>проект вместе.</h2>
+        <p style="margin-top:22px;color:#666;">
+          Оставьте заявку — обсудим помещение, пожелания и бюджет,
+          после чего предложим оптимальное решение.
+        </p>
+      </div>
+
+      <div class="contact-box">
+        <p>Офис</p>
+        <strong>Санкт-Петербург, Комендантская площадь, 4, Стройдом </strong>
+        <p>Телефон</p>
+        <a href="tel:+79214460410">+7 (921) 446-04-10</a>
+        <p>Email</p>
+        <a href="mailto:mebelvlahte@mail.ru">mebelvlahte@mail.ru</a>
+        <div class="buttons" style="justify-content:flex-start;margin-top:25px;">
+          <button class="btn dark" type="button" onclick="openRequestForm()">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Модальное окно заявки -->
+  <div class="modal" id="requestModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="requestTitle">
+      <button class="close-modal" type="button" onclick="closeRequestForm()" aria-label="Закрыть">&times;</button>
+      <h2 id="requestTitle">Оставить заявку</h2>
+      <p class="form-subtitle">Расскажите немного о проекте — мы свяжемся с вами и обсудим детали.</p>
+
+      <form action="https://formsubmit.co/info@mebel-v-lahta.ru" method="POST">
+        <input type="hidden" name="_subject" value="Новая заявка с сайта «Мебель в Лахте»">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="client-name">Ваше имя *</label>
+            <input id="client-name" type="text" name="Имя" placeholder="Например, Александр" required>
+          </div>
+
+          <div class="form-field">
+            <label for="client-phone">Телефон *</label>
+            <input id="client-phone" type="tel" name="Телефон" placeholder="+7 (___) ___-__-__" required>
+          </div>
+
+          <div class="form-field full">
+            <label for="client-email">Ваш Email</label>
+            <input id="client-email" type="email" name="email" placeholder="example@mail.ru">
+          </div>
+
+          <div class="form-field">
+            <label for="furniture-type">Что хотите изготовить? *</label>
+            <select id="furniture-type" name="Тип мебели" required>
+              <option value="" selected disabled>Выберите вариант</option>
+              <option>Кухню</option>
+              <option>Прихожую</option>
+              <option>Санузел</option>
+              <option>Детскую комнату</option>
+              <option>Гостиную</option>
+              <option>Спальню</option>
+              <option>Офис</option>
+              <option>Другое</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="budget">Примерный бюджет</label>
+            <select id="budget" name="Бюджет">
+              <option value="Не определился">Пока не определился</option>
+              <option>До 200 000 ₽</option>
+              <option>200 000–500 000 ₽</option>
+              <option>500 000–1 000 000 ₽</option>
+              <option>Более 1 000 000 ₽</option>
+            </select>
+          </div>
+
+          <div class="form-field full">
+            <label for="deadline">Желаемые сроки</label>
+            <input id="deadline" type="text" name="Желаемые сроки" placeholder="Например, в течение 2–3 месяцев">
+          </div>
+
+          <div class="form-field full">
+            <label for="message">Расскажите о проекте</label>
+            <textarea id="message" name="Комментарий" placeholder="Размер помещения, пожелания по стилю, материалам и т.д."></textarea>
+          </div>
+        </div>
+
+        <label class="form-check">
+          <input type="checkbox" required>
+          <span>Я согласен на обработку указанных данных для связи со мной по заявке.</span>
+        </label>
+
+        <button class="btn dark form-submit" type="submit">Отправить заявку</button>
+        <p class="form-note">После отправки заявка будет передана на почту, указанную в форме.</p>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 «Мебель в Лахте»</p>
+    <p>Премиальная мебель на заказ · Санкт-Петербург</p>
+  </div>
+</footer>
+
+<script>
+  const requestModal = document.getElementById('requestModal');
+
+  function openRequestForm() {
+    requestModal.classList.add('active');
+    requestModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeRequestForm() {
+    requestModal.classList.remove('active');
+    requestModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  requestModal.addEventListener('click', function(event) {
+    if (event.target === requestModal) closeRequestForm();
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') closeRequestForm();
+  });
+</script>
+</body>
+</html>
